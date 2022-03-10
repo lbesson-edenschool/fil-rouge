@@ -1,0 +1,18 @@
+// Police de texte :
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+$font: 'Poppins', sans-serif;
+$font-title: 'Antic Didone', serif;
+
+// Colors :
+$blue: #1E293B;
+$blk: #000000;
+$wht: #ffffff;
+$grn: #65C1BE;
+$hbg: rgba(101, 193, 190, 0.3);
+
+// Include : 
+@import 'header', 'main', 'footer';
+
+body {
+    font-family: $font;
+}
