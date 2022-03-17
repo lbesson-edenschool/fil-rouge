@@ -17,7 +17,7 @@
         <nav>
             <i class="fas fa-bars"></i>
             <ul>
-                <li><a href="#">DevFutur.fr</a></li>
+                <li><a href="/">DevFutur.fr</a></li>
                 <li><a href="#">Découvrir le métier de développeur</a></li>
                 <li><a href="#">Se mettre dans la peau d'un développeur</a></li>
                 <li><a href="#">Quelles études faire ?</a></li>

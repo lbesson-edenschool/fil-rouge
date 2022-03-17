@@ -1,6 +1,7 @@
 @extends('template')
 
 @section('content')
+
     <div class="filter">
 
         <p>Filtres : </p>
@@ -9,4 +10,11 @@
         <button class="location">Lieux</button>
 
     </div>
+
+    <?php
+    
+        // Cartes...
+
+    ?>
+
 @endsection

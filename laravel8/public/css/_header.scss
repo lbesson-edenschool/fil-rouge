@@ -14,14 +14,17 @@ header {
                     padding: 40px;
                 }
             }
-            li:not(:last-child)::after {
-                content: '|';
-            }
             
         }
         .fas.fa-bars {
             display: none;
         }
+    }
+}
+
+@media(min-width: 1300px){
+    nav ul li:not(:last-child)::after {
+        content: '|';
     }
 }
 
@@ -34,15 +37,21 @@ header {
                 justify-content: center;
                 text-align: center;
                 li {
-                    padding: 20px 50px;
+                    padding: 20px 0px;
+                    display: inline-block;
                 }
-                li::after {
-                    content : normal;
+                li:hover{
+                    border-bottom: solid 1px $blue;
                 }
             }
             .fas.fa-bars {
                 display: flex;
                 margin-left: 20px;
+            }
+        }
+        nav:hover{
+            ul{
+                display: block;
             }
         }
     }
