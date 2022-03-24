@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\UsersController;
+
 Route::get('/', function () {
     return view('main');
 });
+
+Route::get('login', [UsersController::class, 'showLogin']);
+Route::post('login', [UsersController::class, 'login'])->name('users.login');
+
+Route::get('register', [UsersController::class, 'create']);
+Route::post('register', [UsersController::class, 'store'])->name('users.store');
 
 Route::get('/discover', function () {
     return view('discover');
@@ -23,4 +31,8 @@ Route::get('/discover', function () {
 
 Route::get('/studies', function () {
     return view('studies');
+});
+
+Route::get('/game', function () {
+    return view('game');
 });

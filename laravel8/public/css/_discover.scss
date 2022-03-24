@@ -6,6 +6,7 @@
     h1{
         color: $grn;
         flex-basis: 100%;
+        text-align: center;
     }
     article {
         background: rgba( 255, 255, 255, 0.25 );
@@ -15,16 +16,17 @@
         border-radius: 10px;
         border: 1px solid rgba( 255, 255, 255, 0.18 );
         width: 500px;
-        height: 500px;
         color: white;
         padding: 1rem;
         font-size: 1.5rem;
         margin: 30px;
         &>h3{
             color:red;
+            text-align: center;
         }
         &>p{
             color: teal;
         }
     }
+
 }
