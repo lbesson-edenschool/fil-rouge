@@ -12,7 +12,9 @@ $hbg: rgba(101, 193, 190, 0.3);
 
 // Include : 
 @import 'header', 'index', 'footer', 'discover', 'game';
-
+*{
+    box-sizing: border-box;
+}
 body {
     font-family: $font;
 }

@@ -18,7 +18,7 @@
             transition: transform 0.6s;
             transform-style: preserve-3d;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
+            border-radius: 15px;
             .flip-card-front, .flip-card-back {
                 position: absolute;
                 width: 100%;
@@ -31,15 +31,15 @@
                 align-items: center;
                 font-size: 2rem;
                 justify-content: center;
-                color: red;
+                color: black;
             }
             .flip-card-back {
+                padding: 3rem;
                 color: teal;
                 transform: rotateY(180deg);
             }
         }
     }
-    
     .flip-card:hover .flip-card-inner {
         transform: rotateY(180deg);
     }
