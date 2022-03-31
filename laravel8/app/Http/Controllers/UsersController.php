@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
  
 class UsersController extends Controller
 {
@@ -13,10 +14,20 @@ class UsersController extends Controller
         return view('users.login');
     }
 
+    public static function checkLogin(){
+        if(!isset(session('user')['username']) || !isset(session('user')['password'])) return false;
+        $truc = User::query()->where('login', '=', session('user')['username'])->where('password', '=', session('user')['password']);
+        if($truc->first() !== null) {
+            return true;
+        } else return false;
+    }
+
     public function login(Request $request){ // Gère la connexion
-        $truc = User::query()->where('name', '=', $request->all()['name'])->where('password', '=', $request->all()['password']);
-        if($truc->first() !== null) return "Vous êtes bien connecté";
-        else return 'Mauvais login';
+        $truc = User::query()->where('login', '=', $request->all()['login'])->where('password', '=', DB::raw("PASSWORD('{$request->all()['password']}')"));
+        if($truc->first() !== null) {
+            session()->put('user', ["username" => $truc->first()['login'], "password" => $truc->first()['password']]);
+            return redirect(route('admin.home'));
+        } else return redirect(route('login'));
     }
 
     public function create() // Affiche le formulaire d'inscription
@@ -26,8 +37,7 @@ class UsersController extends Controller
 
     public function store(Request $request) // Gère l'inscription
     {
-        //return dd($request->all());
-        User::create($request->all());
+        User::create(["_token" => $request->all()['_token'], "id_user" => $request->all()['id_user'], "login" => $request->all()['login'], "password" => DB::raw("PASSWORD('{$request->all()['password']}')")]);
         return redirect('/login');
     }
 }

@@ -7,12 +7,12 @@
         </header>
         <div class="card-content">
             <div class="content">
-            <form action="{{ route('users.login') }}" method="POST">
+            <form action="{{ route('api.login') }}" method="POST">
                 @csrf
                     <div class="field">
                         <label class="label">Nom d'utilisateur</label>
                         <div class="control">
-                          <input class="input @error('name') is-danger @enderror" type="text" name="login" placeholder="Nom d'utilisateur">
+                          <input class="input @error('login') is-danger @enderror" type="text" name="login" placeholder="Nom d'utilisateur">
                         </div>
                     </div>
                     <div class="field">

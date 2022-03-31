@@ -8,25 +8,40 @@
         flex-basis: 100%;
         text-align: center;
     }
-    article {
-        background: rgba( 255, 255, 255, 0.25 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 4px );
-        -webkit-backdrop-filter: blur( 4px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    .flip-card {
         width: 500px;
-        color: white;
-        padding: 1rem;
-        font-size: 1.5rem;
-        margin: 30px;
-        &>h3{
-            color:red;
+        height: 300px;
+        margin: 1rem;
+        .flip-card-inner {
+            height: 100%;
             text-align: center;
-        }
-        &>p{
-            color: teal;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+            .flip-card-front, .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                background-color: rgba( 255, 255, 255, 0.25 );
+            }
+            .flip-card-front {
+                display: flex;
+                align-items: center;
+                font-size: 2rem;
+                justify-content: center;
+                color: red;
+            }
+            .flip-card-back {
+                color: teal;
+                transform: rotateY(180deg);
+            }
         }
     }
-
+    
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
 }

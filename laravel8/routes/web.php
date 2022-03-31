@@ -19,8 +19,13 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('login', [UsersController::class, 'showLogin']);
-Route::post('login', [UsersController::class, 'login'])->name('users.login');
+Route::middleware(['admin.auth'])->group(function () {
+    Route::get('/admin/home', function(){
+        return view('main');
+    })->name('admin.home');
+});
+
+Route::get('login', [UsersController::class, 'showLogin'])->name('login');
 
 Route::get('register', [UsersController::class, 'create']);
 Route::post('register', [UsersController::class, 'store'])->name('users.store');
