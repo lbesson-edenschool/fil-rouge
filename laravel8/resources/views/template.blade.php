@@ -10,7 +10,6 @@
     <link href="{{ asset('../css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('../css/style.css') }}" rel="stylesheet">
     <title>DevFutur.fr - Fil Rouge</title>
-    @yield('css')
 </head>
 <body>
     <header>

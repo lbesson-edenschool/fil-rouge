@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container">
+
     <div class="filter">
 
         <p>Filtres : </p>
@@ -10,21 +12,31 @@
         <button>Lieux</button>
 
     </div>
+
+    <section><p><?php echo uniqid(); ?></p>
     
     <?php
-    
-        for ($i=0; $i < 5; $i++) { 
-            echo "
-            <article>
 
-                <h3>Un geek boutonneux asocial ?</h3>
+        foreach ($studies as $studie) { ?>
+        
+            <div class="card">
 
-                <p>Non, la réalité en est loin ! Désormais, les compétences recherchées chez un développeur sont évidemment techniques, mais également humaines, de plus en plus d’entreprises préfèrent un développeur assez bon,  qui a de bonnes compétences humaines, qu’un excellent développeur, mais incapable de travailler en équipe, qui ne sait pas parler aux clients.</p>
+                <img src="random">
 
-            </article>
-            ";
-        };
+                <h3 class="school">{{$studie->title_school }}</h3>
 
-    ?>
+                <h4>Spécialité et formation :</h4>
+
+                <p class="specialites">Assistant développeur Web / Web mobile</p>
+                <p class="diplome">Diplôme Niveau 4</p>
+                
+
+            </div>
+
+        <?php } ?>
+
+    </section>
+
+</div>
 
 @endsection

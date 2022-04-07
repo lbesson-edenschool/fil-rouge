@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\DiscoverController;
+use App\Http\Controllers\StudiesController;
 
 Route::get('/', function () {
     return view('main');
@@ -21,7 +23,7 @@ Route::get('/', function () {
 
 Route::middleware(['admin.auth'])->group(function () {
     Route::get('/admin/home', function(){
-        return view('main');
+        return view('admin.home');
     })->name('admin.home');
 });
 
@@ -30,13 +32,9 @@ Route::get('login', [UsersController::class, 'showLogin'])->name('login');
 Route::get('register', [UsersController::class, 'create']);
 Route::post('register', [UsersController::class, 'store'])->name('users.store');
 
-Route::get('/discover', function () {
-    return view('discover');
-});
+Route::get('discover', [DiscoverController::class, 'show']);
 
-Route::get('/studies', function () {
-    return view('studies');
-});
+Route::get('studies', [StudiesController::class, 'studies']);
 
 Route::get('/game', function () {
     return view('game');

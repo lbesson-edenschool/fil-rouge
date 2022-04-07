@@ -17,7 +17,7 @@
             <h3>Quelles études  faire ?</h3>
             <p>Le métier de développeur est accessible dès la 3e et ne requiert pas de connaissances particulières en informatique, on apprend tout de A à Z, pas de panique, il ne faut pas être un prodige des maths, ni un petit geek !</p>
             <div class="btn">
-                <a class="direct" href="#">Envie de t'essayer à ce metier ?</a><a class="direct" href="studies">Envie de t'orienter dans cette brance ?</a>
+                <a class="direct" href="game">Envie de t'essayer à ce metier ?</a><a class="direct" href="studies">Envie de t'orienter dans cette branche ?</a>
             </div>
         </article>
     </div>

@@ -16,7 +16,7 @@ class AdminAuth
      */
     public function handle($request, Closure $next)
     {
-        if(UsersController::checkLogin()){
+        if(UsersController::checkLogin($request)){
             return $next($request);
         } else return redirect(route('login'));
     }

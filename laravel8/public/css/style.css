@@ -381,7 +381,7 @@ header nav .fas.fa-bars {
 }
 
 #cardContainer .flip-card .flip-card-inner .flip-card-back {
-  padding: 3rem;
+  padding: 2rem 2rem 0 2rem;
   color: teal;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
@@ -392,9 +392,77 @@ header nav .fas.fa-bars {
           transform: rotateY(180deg);
 }
 
+@media (max-width: 1300px) {
+  #cardContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 2rem;
+  }
+  #cardContainer h1 {
+    color: #65C1BE;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: center;
+  }
+  #cardContainer .flip-card {
+    width: 500px;
+    height: 300px;
+    margin: 1rem;
+  }
+  #cardContainer .flip-card .flip-card-inner {
+    height: 100%;
+    text-align: center;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    transition: transform 0.6s, -webkit-transform 0.6s;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+  }
+  #cardContainer .flip-card .flip-card-inner .flip-card-front, #cardContainer .flip-card .flip-card-inner .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  #cardContainer .flip-card .flip-card-inner .flip-card-front {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 2rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: black;
+  }
+  #cardContainer .flip-card .flip-card-inner .flip-card-back {
+    padding: 0;
+    color: teal;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  #cardContainer .flip-card:hover .flip-card-inner {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
 #game {
   font-size: 1.5rem;
-  margin: 0px;
+  margin: 10% 0px;
   padding: 5px 15%;
 }
 
@@ -486,6 +554,34 @@ header nav .fas.fa-bars {
   }
 }
 
+.filter {
+  border-bottom: solid 2px black;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section .card {
+  padding: 10px;
+  width: 500px;
+  margin: 1rem;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+section .card .school {
+  color: #65C1BE;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -493,5 +589,10 @@ header nav .fas.fa-bars {
 
 body {
   font-family: "Poppins", sans-serif;
+}
+
+body .container {
+  padding: 20px 60px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */

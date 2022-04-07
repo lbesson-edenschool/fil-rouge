@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 class UsersController extends Controller
 {
 
+    static $user = [];
+
     public function showLogin() // Affiche le formulaire de connexion
     {
         return view('users.login');
@@ -26,6 +28,7 @@ class UsersController extends Controller
         $truc = User::query()->where('login', '=', $request->all()['login'])->where('password', '=', DB::raw("PASSWORD('{$request->all()['password']}')"));
         if($truc->first() !== null) {
             session()->put('user', ["username" => $truc->first()['login'], "password" => $truc->first()['password']]);
+            session()->save();
             return redirect(route('admin.home'));
         } else return redirect(route('login'));
     }

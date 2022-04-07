@@ -11,10 +11,14 @@ $grn: #65C1BE;
 $hbg: rgba(101, 193, 190, 0.3);
 
 // Include : 
-@import 'header', 'index', 'footer', 'discover', 'game';
+@import 'header', 'index', 'footer', 'discover', 'game', 'studies', 'admin_home';
 *{
     box-sizing: border-box;
 }
 body {
     font-family: $font;
+    .container {
+        padding: 20px 60px;
+        margin: 0 auto;
+    }
 }
