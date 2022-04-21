@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Discover extends Model
 {
     use HasFactory;
+
     protected $table = 'cards_discover';
 
-    
 }

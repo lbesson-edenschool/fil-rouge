@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,10 @@ use App\Http\Controllers\UsersController;
 |
 */
 
+//[AdminController::class, 'edit']
+
 Route::post('login', [UsersController::class, 'login'])->name('api.login');
 
+Route::middleware(['admin.auth'])->group(function () {
+    Route::post('/admin/{action}', [AdminController::class, 'edit']);
+});

@@ -9,8 +9,12 @@ class DiscoverController extends Controller
 {
     public function show()
     {
-        $discovers = Discover::all();
+        
+        $discovers = Discover::query()->join('content', 'content.id_content', '=', 'cards_discover.id_content')->get();
 
         return view('discover', compact('discovers'));
+
     }
+
+    
 }

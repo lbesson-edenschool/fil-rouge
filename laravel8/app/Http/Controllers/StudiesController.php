@@ -7,13 +7,11 @@ use App\Models\Studies;
 
 class StudiesController extends Controller
 {
-    
-    public function studies() {
+    public function studies() 
+    {
 
-        $studies = Studies::all();
-
+        $studies = Studies::query()->join('content', 'content.id_content', '=', 'cards_school.id_content')->get();
         return view('studies', compact('studies'));
 
     }
-
 }

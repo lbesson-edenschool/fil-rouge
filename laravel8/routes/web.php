@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\StudiesController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('main');
 });
 
 Route::middleware(['admin.auth'])->group(function () {
-    Route::get('/admin/home', function(){
-        return view('admin.home');
-    })->name('admin.home');
+    Route::post('/admin/{action}', [AdminController::class, 'delete']);
+    Route::get('/admin/{page}', [AdminController::class, 'show']);
 });
 
 Route::get('login', [UsersController::class, 'showLogin'])->name('login');

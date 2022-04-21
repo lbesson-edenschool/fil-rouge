@@ -13,24 +13,22 @@
 
     </div>
 
-    <section><p><?php echo uniqid(); ?></p>
-    
+    <p><?php echo uniqid() ?></p>
+
+    <section>
+
     <?php
 
         foreach ($studies as $studie) { ?>
         
             <div class="card">
-
-                <img src="random">
+                
+                <img src="{{ $studie->img_path }}">
 
                 <h3 class="school">{{$studie->title_school }}</h3>
 
-                <h4>Spécialité et formation :</h4>
-
-                <p class="specialites">Assistant développeur Web / Web mobile</p>
-                <p class="diplome">Diplôme Niveau 4</p>
+                <p> {{ $studie->content }} </p> 
                 
-
             </div>
 
         <?php } ?>
