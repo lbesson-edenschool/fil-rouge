@@ -29,7 +29,7 @@ class UsersController extends Controller
         if($truc->first() !== null) {
             session()->put('user', ["username" => $truc->first()['login'], "password" => $truc->first()['password']]);
             session()->save();
-            return redirect(route('admin.home'));
+            return redirect('/admin/discover');
         } else return redirect(route('login'));
     }
 

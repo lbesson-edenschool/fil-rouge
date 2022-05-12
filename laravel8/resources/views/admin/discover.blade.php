@@ -4,9 +4,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div id="admin"> 
     <h1>Panel admin | Discover</h1>
-    <form method="post" action="/admin/newDiscover">
-        <input type="submit" value="New article">
-    </form>
+    
+    <a href="/admin/new/discover">New article</a>
     <table id="admin_table">
         <tr>
             <td>Title</td>
@@ -33,7 +32,6 @@
 <script>
     $('input[value="Edit"]').each((_,x) => {
         $(x).on('click', _ => {
-            console.log("<?= csrf_token() ?>")
             let data = {
                 title: $(`#${$(x).attr("data-id")}_title`).val(),
                 content: $(`#${$(x).attr("data-id")}_content`).val(),

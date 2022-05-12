@@ -583,7 +583,7 @@ section .card .school {
 }
 
 section .card img {
-  max-width: 30%;
+  width: 150px !important;
 }
 
 * {

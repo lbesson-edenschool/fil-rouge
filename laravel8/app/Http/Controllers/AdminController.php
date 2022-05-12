@@ -29,6 +29,47 @@ class AdminController extends Controller
         }
     }
 
+    public function new($param){
+        return dd($param);
+        $x = ucfirst("new".$param);
+        if(method_exists($this, $x)){
+            return $this->$x();
+        } else {
+            return $this->error(404);
+        }
+    }
+
+    public function newDiscover(){
+        $method = $_SERVER['REQUEST_METHOD'];
+        if($method == 'GET'){
+            return view('admin.new.discover');
+        } else if($method == 'POST'){
+            $bullets = $_POST[''];
+            $product_id = Input::get('product_id');
+            $query = "INSERT INTO bullets (product_id, user_id,bullet_content, bullet_deleted, created_at, updated_at) 
+                                VALUES (?, ?, ?, ?, ?, ?)";
+            foreach ($bullets as $bullet) {
+                $values = [$product_id,$user_id,$bullet,'N',$date,$date];
+                DB::insert($query, $values);
+            }
+            Discover::insert(`INSERT INTO content(id_content, content) VALUES (`.uniqid().`,'')`);
+            Discover::insert(`INSERT INTO content(id_content, content) VALUES (`.uniqid().`,'')`);
+
+            return redirect('/admin/discover');
+        }
+    }
+
+    public function newStudies(){
+        $method = $_SERVER['REQUEST_METHOD'];
+        if($method == 'GET'){
+            return view('admin.new.studies');
+        } else if($method == 'POST'){
+            Studies::insert(`INSERT INTO content(id_content, content) VALUES (`.uniqid().`,'')`);
+            return view('admin.studies');
+        }
+    }
+    
+
     public function delete($param, Request $request){
         if(method_exists($this, $param)){
             return $this->$param($request);

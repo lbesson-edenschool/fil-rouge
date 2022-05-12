@@ -24,6 +24,8 @@ Route::get('/', function () {
 
 Route::middleware(['admin.auth'])->group(function () {
     Route::post('/admin/{action}', [AdminController::class, 'delete']);
+    Route::get('/admin/new/{action}', [AdminController::class, 'new']);
+    Route::post('/admin/new/{action}', [AdminController::class, 'new']);
     Route::get('/admin/{page}', [AdminController::class, 'show']);
 });
 
