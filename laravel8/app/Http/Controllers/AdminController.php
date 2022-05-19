@@ -5,22 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Studies;
 use App\Models\Discover;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-
-    public function editDiscover(Request $request)
-    {
-
-        extract($request->all());
-        //$title
-        //$content
-        Discover::query()->where("id_discover", $request->all()[''])->update();
-
-        //return redirect('/admin/discover');
-    }
-
-
     public function show($param){
         if(method_exists($this, $param)){
             return $this->$param();
@@ -29,8 +17,32 @@ class AdminController extends Controller
         }
     }
 
+    public function edit($param, Request $request){
+        if(method_exists($this, $param)){
+            return $this->$param($request);
+        } else {
+            return $this->error(404);
+        }
+    }
+
+    public function editDiscover(Request $request)
+    {
+        DB::table('cards_discover')->where('id_discover', $request->all()['id'])->update(['title_discover' => $request->all()['title']]);
+        DB::table('content')->where('id_content', $request->all()['idContent'])->update(['content' => $request->all()['content']]);
+        return redirect('/admin/discover');
+    }
+
+    public function editStudies(Request $request)
+    {
+        DB::table('cards_school')->where('id_cards_school', $request->all()['id'])->update(['title_school' => $request->all()['title']]);
+        DB::table('cards_school')->where('id_cards_school', $request->all()['id'])->update(['img_path' => $request->all()['imgPath']]);
+        DB::table('content')->where('id_content', $request->all()['idContent'])->update(['content' => $request->all()['content']]);
+
+        return redirect('/admin/studies');
+    }
+
+
     public function new($param){
-        return dd($param);
         $x = ucfirst("new".$param);
         if(method_exists($this, $x)){
             return $this->$x();
@@ -44,16 +56,12 @@ class AdminController extends Controller
         if($method == 'GET'){
             return view('admin.new.discover');
         } else if($method == 'POST'){
-            $bullets = $_POST[''];
-            $product_id = Input::get('product_id');
-            $query = "INSERT INTO bullets (product_id, user_id,bullet_content, bullet_deleted, created_at, updated_at) 
-                                VALUES (?, ?, ?, ?, ?, ?)";
-            foreach ($bullets as $bullet) {
-                $values = [$product_id,$user_id,$bullet,'N',$date,$date];
-                DB::insert($query, $values);
-            }
-            Discover::insert(`INSERT INTO content(id_content, content) VALUES (`.uniqid().`,'')`);
-            Discover::insert(`INSERT INTO content(id_content, content) VALUES (`.uniqid().`,'')`);
+            DB::table('cards_discover')->insert(
+                array(['title_discover' => $request->all()['title']])
+            );
+            DB::table('content')->insert(
+                array(['content' => $request->all()['content']])
+            );
 
             return redirect('/admin/discover');
         }
@@ -71,14 +79,6 @@ class AdminController extends Controller
     
 
     public function delete($param, Request $request){
-        if(method_exists($this, $param)){
-            return $this->$param($request);
-        } else {
-            return $this->error(404);
-        }
-    }
-
-    public function edit($param, Request $request){
         if(method_exists($this, $param)){
             return $this->$param($request);
         } else {

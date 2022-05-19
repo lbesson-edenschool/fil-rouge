@@ -11,8 +11,31 @@
         <label for="content">Contenue</label>
         <input name="content" id="">
         @csrf
-        <input type="submit" data-id="" value="Enregistrer">
+        <input type="submit" value="Enregistrer">
+
     </form>
 </div>
+<script>
+    $('input[value="Enregistrer"]').each((_,x) => {
+        $(x).on('click', _ => {
+            let data = {
+                title: $(`#${$(x).attr("data-id")}_title`).val(),
+                content: $(`#${$(x).attr("data-id")}_content`).val(),
+            }
+            $.ajax({
+                url: "/api/admin/newDiscover",
+                method: "post",
+                headers: {
+                    "X-CSRF-TOKEN": "<?= csrf_token() ?>"
+                },
+                data
+            }).then(res => {
+                console.log(res)
+            }).catch(err => {
+                console.log(err)
+            })
+        })
+    })
+</script>
 
 @endsection
