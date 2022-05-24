@@ -4,16 +4,8 @@
 
 <div class="container">
 
-    <div class="filter">
+    <h1>Les écoles :</h1>
 
-        <p>Filtres : </p>
-        <button>Prix</button>
-        <button>Diplôme</button>
-        <button>Lieux</button>
-
-    </div>
-
-    <p><?php echo uniqid() ?></p>
 
     <section>
 
@@ -23,7 +15,7 @@
         
             <div class="card">
                 
-                <img src="{{ $studie->img_path }}">
+                <img src="{{ $studie->img_path }}" alt="Ecole {{$studie->title_school }}">
 
                 <h3 class="school">{{$studie->title_school }}</h3>
 

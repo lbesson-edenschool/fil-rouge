@@ -25,28 +25,4 @@
     </form>
 
 </div>
-
-<script>
-    $('input[value="Edit"]').each((_,x) => {
-        $(x).on('click', _ => {
-            let data = {
-                title: $(`#${$(x).attr("data-id")}_title`).val(),
-                content: $(`#${$(x).attr("data-id")}_content`).val(),
-            }
-            $.ajax({
-                url: "/api/admin/editDiscover",
-                method: "post",
-                headers: {
-                    "X-CSRF-TOKEN": "<?= csrf_token() ?>"
-                },
-                data
-            }).then(res => {
-                console.log(res)
-            }).catch(err => {
-                console.log(err)
-            })
-        })
-    })
-</script>
-
 @endsection

@@ -42,38 +42,45 @@ class AdminController extends Controller
     }
 
 
-    public function new($param){
-        $x = ucfirst("new".$param);
-        if(method_exists($this, $x)){
-            return $this->$x();
+    public function new($param, Request $request){
+        $param = 'new'.ucfirst($param);
+        if(method_exists($this, $param)){
+            return $this->$param($request);
         } else {
             return $this->error(404);
         }
     }
 
-    public function newDiscover(){
+    public function newDiscover(Request $request){
         $method = $_SERVER['REQUEST_METHOD'];
         if($method == 'GET'){
             return view('admin.new.discover');
         } else if($method == 'POST'){
-            DB::table('cards_discover')->insert(
-                array(['title_discover' => $request->all()['title']])
-            );
+            $id_content = uniqid();
             DB::table('content')->insert(
-                array(['content' => $request->all()['content']])
+                array('content' => $request->all()['content'], "id_content" => $id_content)
+            );
+            DB::table('cards_discover')->insert(
+                array('title_discover' => $request->all()['title'], "id_discover" => uniqid(), "id_content" => $id_content)
             );
 
             return redirect('/admin/discover');
         }
     }
 
-    public function newStudies(){
+    public function newStudies(Request $request){
         $method = $_SERVER['REQUEST_METHOD'];
         if($method == 'GET'){
             return view('admin.new.studies');
         } else if($method == 'POST'){
-            Studies::insert(`INSERT INTO content(id_content, content) VALUES (`.uniqid().`,'')`);
-            return view('admin.studies');
+            $id_content = uniqid();
+            DB::table('content')->insert(
+                array('content' => $request->all()['content'], "id_content" => $id_content)
+            );
+            DB::table('cards_school')->insert(
+                array('title_school' => $request->all()['title'], "id_cards_school" => uniqid(),"img_path" => $request->all()['image'], "id_content" => $id_content)
+            );
+            return redirect('/admin/studies');
         }
     }
     

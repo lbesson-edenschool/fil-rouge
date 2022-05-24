@@ -2,6 +2,16 @@
 
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<nav>
+    <ul>
+        <li>
+            <a href="/admin/studies">Studies</a>
+        </li>
+        <li>
+            <a href="/admin/discover">Discover</a>
+        </li>
+    </ul>
+</nav>
 <div id="admin"> 
     <h1>Panel admin | Discover</h1>
     
@@ -13,7 +23,7 @@
             <td>Action</td>
         </tr>
         <?php foreach ($discovers as $discover) {
-            //dd($discover); ?>
+            ?>
             <tr>
                 <td><textarea name="title" id="{{ $discover->id_discover }}_title" cols="30" rows="10">{{ $discover->title_discover }}</textarea></td>
                 <td><textarea name="content" id="{{ $discover->id_discover }}_content" cols="30" rows="10">{{ $discover->content }}</textarea></td>

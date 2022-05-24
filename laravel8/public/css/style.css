@@ -22,7 +22,7 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   color: #000000;
-  padding: 40px;
+  padding: 20px;
 }
 
 header nav .fas.fa-bars {
@@ -48,7 +48,7 @@ header nav .fas.fa-bars {
     text-align: center;
   }
   header nav ul li {
-    padding: 20px 0px;
+    padding: 2yn0px 0px;
     display: inline-block;
   }
   header nav ul li:hover {
@@ -460,98 +460,9 @@ header nav .fas.fa-bars {
   }
 }
 
-#game {
-  font-size: 1.5rem;
-  margin: 10% 0px;
-  padding: 5px 15%;
-}
-
-#game #top, #game #code, #game #buttons {
-  padding: 5px 20px;
-  margin: 10px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 5px 5px gray;
-          box-shadow: 5px 5px 5px 5px gray;
-}
-
-#game #top p {
-  background-color: blue;
-  color: yellow;
-  border-radius: 10px;
-  padding: 10px;
-  height: 400px;
-}
-
-#game #bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0px;
-}
-
-#game #bottom #code {
-  width: 80%;
-}
-
-#game #bottom #code input {
-  border: none;
-  background-color: #f0eeee;
-  color: #000000;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  height: 70%;
-  width: 90%;
-}
-
-#game #bottom #buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#game #bottom #buttons button {
-  border: none;
-  padding: 3px 20px;
-  color: white;
-  border-radius: 10px;
-  margin: 5px;
-}
-
-#game #bottom #buttons button:hover {
-  cursor: pointer;
-}
-
-#game #bottom #buttons #quitter {
-  background-color: red;
-}
-
-#game #bottom #buttons #reset {
-  background-color: yellow;
-}
-
-#game #bottom #buttons #send {
-  background-color: greenyellow;
-}
-
-@media (max-width: 860px) {
-  #game #top {
-    height: auto;
-  }
-  #game #bottom {
-    display: block;
-  }
-  #game #bottom #code {
-    width: auto;
-    padding: 2px;
-  }
-  #game #bottom #code input {
-    width: 90%;
-  }
+iframe {
+  width: 100% !important;
+  height: 700px !important;
 }
 
 .filter {

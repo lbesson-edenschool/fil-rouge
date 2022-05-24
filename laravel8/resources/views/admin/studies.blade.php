@@ -2,11 +2,20 @@
 
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<nav>
+    <ul>
+        <li>
+            <a href="/admin/studies">Studies</a>
+        </li>
+        <li>
+            <a href="/admin/discover">Discover</a>
+        </li>
+    </ul>
+</nav>
 <div id="admin">
     
-    <h1>Panel admin | Studies</h1><button>New article</button>
-
+    <h1>Panel admin | Studies</h1>
+    <a href="/admin/new/studies">New article</a>
     <table id="admin_table">
         <thead>
             <tr>
