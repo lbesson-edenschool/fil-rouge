@@ -17,7 +17,7 @@
 
                 <h3 class="school">{{ $studie->title_school }}</h3>
 
-                <pre><p> {{ $studie->content }} </p></pre>
+                <p> {{ $studie->content }} </p>
                 
             </div>
         @endforeach

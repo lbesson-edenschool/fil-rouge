@@ -11,7 +11,8 @@ $grn: #65C1BE;
 $hbg: rgba(101, 193, 190, 0.3);
 
 // Include : 
-@import 'header', 'index', 'discover', 'game', 'studies', 'admin_studies';
+@import 'header', 'index', 'discover', 'game', 'studies', 'admin_studies', 'new_studies';
+
 *{
     box-sizing: border-box;
 }

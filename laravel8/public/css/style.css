@@ -48,7 +48,7 @@ header nav .fas.fa-bars {
     text-align: center;
   }
   header nav ul li {
-    padding: 20px 0;
+    padding: 10px;
     display: inline-block;
   }
   header nav ul li a {
@@ -345,6 +345,7 @@ header nav .fas.fa-bars {
 }
 
 #cardContainer .flip-card .flip-card-inner .flip-card-front {
+  padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,7 +360,13 @@ header nav .fas.fa-bars {
 }
 
 #cardContainer .flip-card .flip-card-inner .flip-card-back {
-  padding: 5rem 2rem 0 2rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: teal;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
@@ -427,7 +434,6 @@ header nav .fas.fa-bars {
     color: black;
   }
   #cardContainer .flip-card .flip-card-inner .flip-card-back {
-    padding: 0;
     color: teal;
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
@@ -456,7 +462,6 @@ section {
 section .card {
   padding: 1.5rem 0.5rem;
   width: 550px !important;
-  height: 400px !important;
   margin: 0.5rem;
   text-align: center;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -473,12 +478,13 @@ section .card img {
   width: 100px !important;
 }
 
+section .card p {
+  white-space: break-spaces;
+}
+
 @media (max-width: 730px) {
   .card {
     max-width: 90%;
-  }
-  .card pre {
-    width: auto !important;
   }
 }
 
@@ -567,6 +573,49 @@ h1 {
 
 #admin_table tbody tr td input:hover {
   cursor: pointer;
+}
+
+#admin form {
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#admin form label {
+  text-transform: uppercase;
+  margin: 10px 0px;
+  font-size: 2rem;
+}
+
+#admin form textarea {
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+  resize: none;
+}
+
+#admin form input {
+  margin: 0 auto;
+  border: none;
+  padding: 20px;
+  color: black;
+  background-color: white;
+  border: solid 1px black;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#admin form input:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 * {

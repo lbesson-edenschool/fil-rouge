@@ -1,0 +1,49 @@
+#admin {
+
+    form {
+
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+
+            text-transform: uppercase;
+            margin: 10px 0px;
+            font-size: 2rem;
+
+        }
+
+        textarea {
+
+            width: 300px;
+            height: 100px;
+            margin: 0 auto;
+            resize: none;
+
+        }        
+
+        input {
+
+            margin: 0 auto;
+            border: none;
+            padding: 20px;
+            color: black;
+            background-color: white;
+            border: solid 1px black;
+            transition: 1s;
+
+            &:hover {
+
+                cursor: pointer;
+                background-color: black;
+                color: white;
+
+            }
+        } // Louudoh !
+
+    }
+
+}
