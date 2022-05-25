@@ -16,8 +16,6 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-//[AdminController::class, 'edit']
-
 Route::post('login', [UsersController::class, 'login'])->name('api.login');
 
 Route::middleware(['admin.auth'])->group(function () {

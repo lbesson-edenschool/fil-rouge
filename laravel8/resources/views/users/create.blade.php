@@ -1,6 +1,7 @@
 @extends('template')
 
 @section('content')
+    <!-- On génere un Id unique -->
     @php
         $id = uniqid();
     @endphp

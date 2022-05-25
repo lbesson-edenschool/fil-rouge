@@ -4,6 +4,10 @@
 - fil-rouge\laravel8\database\db_data.sql --> Base de données avec des données
 - fil-rouge\laravel8\database\db_without_data.sql --> Base de données sans données
 
+# Login Admin :
+Login : admin
+password : admin
+
 # Estimation du temps :
 - Front         -->         3.5 jours
 - Back          -->         3 jours

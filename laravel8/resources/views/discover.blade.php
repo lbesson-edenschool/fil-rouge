@@ -5,7 +5,7 @@
     <section id="cardContainer">
 
         <h1>Dès qu’on pense à un développeur, on a en tête l’image du geek boutonneux, asocial, qui passe la journée dans sa chambre</h1>
-        
+        <!-- Affichage des cartes discover dynamiquement -->
         @foreach ($discovers as $discover)   
             <div class="flip-card">
                 <div class="flip-card-inner">

@@ -15,7 +15,6 @@ header {
                     padding: 20px;
                 }
             }
-            
         }
         .fas.fa-bars {
             display: none;
@@ -23,7 +22,7 @@ header {
     }
 }
 
-@media(min-width: 1300px){
+@media (min-width: 1300px){
     nav ul li:not(:last-child)::after {
         content: '|';
     }
@@ -38,8 +37,11 @@ header {
                 justify-content: center;
                 text-align: center;
                 li {
-                    padding: 2yn0px 0px;
+                    padding: 20px 0;
                     display: inline-block;
+                    a{
+                        padding: 0;
+                    }
                 }
                 li:hover{
                     border-bottom: solid 1px $blue;

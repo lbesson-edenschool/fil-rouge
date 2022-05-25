@@ -48,8 +48,11 @@ header nav .fas.fa-bars {
     text-align: center;
   }
   header nav ul li {
-    padding: 2yn0px 0px;
+    padding: 20px 0;
     display: inline-block;
+  }
+  header nav ul li a {
+    padding: 0;
   }
   header nav ul li:hover {
     border-bottom: solid 1px #1E293B;
@@ -178,7 +181,7 @@ header nav .fas.fa-bars {
 }
 
 .espace {
-  height: .1rem;
+  height: 1px;
   background: #ffffff;
 }
 
@@ -206,6 +209,7 @@ header nav .fas.fa-bars {
 .articles article p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  line-height: 2rem;
 }
 
 .articles article .btn {
@@ -229,33 +233,6 @@ header nav .fas.fa-bars {
 }
 
 .articles article button:hover {
-  cursor: pointer;
-}
-
-.filter {
-  padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.filter p {
-  margin: 0;
-}
-
-.filter button {
-  border: none;
-  font-size: .8rem;
-  background-color: lightgray;
-  padding: 0.7rem;
-  margin: 0px 0.5rem;
-}
-
-.filter button:hover {
-  background: gray;
   cursor: pointer;
 }
 
@@ -293,6 +270,7 @@ header nav .fas.fa-bars {
   .articles article p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    line-height: 2rem;
   }
   .articles article .btn {
     display: -webkit-box;
@@ -465,10 +443,6 @@ iframe {
   height: 700px !important;
 }
 
-.filter {
-  border-bottom: solid 2px black;
-}
-
 section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -480,21 +454,119 @@ section {
 }
 
 section .card {
-  padding: 10px;
-  width: 500px !important;
-  margin: 1rem;
+  padding: 1.5rem 0.5rem;
+  width: 550px !important;
+  height: 400px !important;
+  margin: 0.5rem;
   text-align: center;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
+  border-radius: 1.5rem;
 }
 
 section .card .school {
   color: #65C1BE;
+  font-size: 1.8rem;
 }
 
 section .card img {
-  width: 150px !important;
+  width: 100px !important;
+}
+
+@media (max-width: 730px) {
+  .card {
+    max-width: 90%;
+  }
+  .card pre {
+    width: auto !important;
+  }
+}
+
+.admin_nav {
+  margin: 0 auto;
+}
+
+.admin_nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin_nav ul li {
+  list-style: none;
+}
+
+.admin_nav ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.center {
+  margin: 0 auto;
+  display: inline-block;
+  margin: 100px;
+}
+
+.center .add {
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0 auto;
+  border: solid black 2px;
+  padding: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.center .add:hover {
+  color: white;
+  background-color: black;
+}
+
+#admin_table {
+  border-collapse: collapse;
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#admin_table thead tr {
+  font-size: 2rem;
+  text-align: center;
+  background-color: gray;
+  color: white;
+}
+
+#admin_table tbody tr {
+  width: 150px;
+}
+
+#admin_table tbody tr td {
+  border: 1px solid black;
+}
+
+#admin_table tbody tr td textarea {
+  width: 400px;
+  resize: none;
+  border: none;
+}
+
+#admin_table tbody tr td input {
+  border: none;
+  padding: 20px;
+  color: black;
+  background-color: white;
+}
+
+#admin_table tbody tr td input:hover {
+  cursor: pointer;
 }
 
 * {

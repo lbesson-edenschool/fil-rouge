@@ -15,7 +15,7 @@
         <label for="image">Adresse de l'image</label>
         <textarea name="image" id="" cols="30" rows="10"></textarea>
 
-        <label for="content">Contenue</label>
+        <label for="content">Contenu</label>
         <textarea name="content" id="" cols="30" rows="10"></textarea>
 
         @csrf

@@ -4,27 +4,23 @@
 
 <div class="container">
 
-    <h1>Les écoles :</h1>
+    <h1>École et formation de développeur :</h1>
 
 
     <section>
-
-    <?php
-
-        foreach ($studies as $studie) { ?>
+        <!-- Affichage des cartes écoles dynamiquement -->
+        @foreach ($studies as $studie)
         
             <div class="card">
                 
                 <img src="{{ $studie->img_path }}" alt="Ecole {{$studie->title_school }}">
 
-                <h3 class="school">{{$studie->title_school }}</h3>
+                <h3 class="school">{{ $studie->title_school }}</h3>
 
-                <p> {{ $studie->content }} </p> 
+                <pre><p> {{ $studie->content }} </p></pre>
                 
             </div>
-
-        <?php } ?>
-
+        @endforeach
     </section>
 
 </div>

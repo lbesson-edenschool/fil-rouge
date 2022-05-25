@@ -2,8 +2,12 @@
 
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<nav>
+
+<nav class="admin_nav">
     <ul>
+        <li>
+            NAVIGATION
+        </li>
         <li>
             <a href="/admin/studies">Studies</a>
         </li>
@@ -12,20 +16,31 @@
         </li>
     </ul>
 </nav>
+
 <div id="admin">
-    
-    <h1>Panel admin | Studies</h1>
-    <a href="/admin/new/studies">New article</a>
+
+    <div class="center">
+
+        
+        <h1>Panel admin | Studies</h1>
+
+        <a class="add" href="/admin/new/studies">New article</a>
+        
+
+    </div>
+
     <table id="admin_table">
         <thead>
             <tr>
                 <td>Title</td>
-                <td>Image</td>
+                <td>Lien de l'image</td>
                 <td>Content</td>
-                <td>Action</td>
+                <td>edit</td>
+                <td>delete</td>
             </tr>
         </thead>
         <tbody>
+            <!-- Affichage des cartes des écoles pour les modifications/suppression/ajout dans la page admin -->
             @foreach ($studies as $studie)
                 <tr>
                     <td><textarea type="text" id="{{ $studie->id_cards_school }}_title" name="title" cols="30" rows="10">{{$studie->title_school }}</textarea>
@@ -53,6 +68,7 @@
 </div>
 
 <script>
+    //On récupère chaque input avec la value "Edit" et lors d'un clique on défini le titre, contenu, idContent et l'id
     $('input[value="Edit"]').each((_,x) => {
         $(x).on('click', _ => {
             let data = {
@@ -62,6 +78,7 @@
                 idContent: $(x).parent().children('input[name="idContent"]').val(),
                 id: $(x).attr("data-id"),
             }
+            //Une requète ajax qui redirige à la page editStudies
             $.ajax({
                 url: "/api/admin/editStudies",
                 method: "post",
