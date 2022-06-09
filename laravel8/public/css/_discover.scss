@@ -32,13 +32,13 @@
                 align-items: center;
                 font-size: 2rem;
                 justify-content: center;
-                color: black;
+                color: $blk;
             }
             .flip-card-back {
                 padding: 1rem;
                 display: flex;
                 align-items: center;
-                color: teal;
+                color: $teal;
                 transform: rotateY(180deg);
             }
         }
@@ -83,10 +83,10 @@
                     align-items: center;
                     font-size: 2rem;
                     justify-content: center;
-                    color: black;
+                    color: $blk;
                 }
                 .flip-card-back {
-                    color: teal;
+                    color: $teal;
                     transform: rotateY(180deg);
                 }
             }

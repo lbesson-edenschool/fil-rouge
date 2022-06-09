@@ -12,7 +12,7 @@
 
             a {
 
-                color: black;
+                color: $blk;
                 text-decoration: none;
                 padding: 10px;
 
@@ -39,12 +39,12 @@ h1 {
 
     .add {
 
-        color: black;
+        color: $blk;
         text-decoration: none;
         font-size: 2rem;
         text-transform: uppercase;
         margin: 0 auto;
-        border: solid black 2px;
+        border: solid $blk 2px;
         padding: 5px;
         transition: 1s;
     
@@ -52,8 +52,8 @@ h1 {
 
     .add:hover {
 
-        color: white;
-        background-color: black;
+        color: $wht;
+        background-color: $blk;
 
     }
 
@@ -72,8 +72,8 @@ h1 {
 
             font-size: 2rem;
             text-align: center;
-            background-color: gray;
-            color: white;
+            background-color: $grey;
+            color: $wht;
 
         }
 
@@ -87,7 +87,7 @@ h1 {
 
             td{
 
-                border: 1px solid black;
+                border: 1px solid $blk;
 
                 textarea {
                     width: 400px;
@@ -100,8 +100,8 @@ h1 {
 
                     border: none;
                     padding: 20px;
-                    color: black;
-                    background-color: white;
+                    color: $blk;
+                    background-color: $wht;
 
                 }
 

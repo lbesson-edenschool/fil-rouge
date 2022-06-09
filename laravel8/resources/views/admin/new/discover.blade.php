@@ -9,7 +9,7 @@
         <textarea name="title" id="" cols="30" rows="10"></textarea>
         <label for="content">Contenu</label>
         <textarea name="content" id="" cols="30" rows="10"></textarea>
-        <p></p>
+        <br>
         @csrf
         <input type="submit" value="Enregistrer">
 

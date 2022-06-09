@@ -356,7 +356,7 @@ header nav .fas.fa-bars {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: black;
+  color: #000000;
 }
 
 #cardContainer .flip-card .flip-card-inner .flip-card-back {
@@ -431,7 +431,7 @@ header nav .fas.fa-bars {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    color: black;
+    color: #000000;
   }
   #cardContainer .flip-card .flip-card-inner .flip-card-back {
     color: teal;
@@ -503,7 +503,7 @@ section .card p {
 }
 
 .admin_nav ul li a {
-  color: black;
+  color: #000000;
   text-decoration: none;
   padding: 10px;
 }
@@ -520,20 +520,20 @@ h1 {
 }
 
 .center .add {
-  color: black;
+  color: #000000;
   text-decoration: none;
   font-size: 2rem;
   text-transform: uppercase;
   margin: 0 auto;
-  border: solid black 2px;
+  border: solid #000000 2px;
   padding: 5px;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
 .center .add:hover {
-  color: white;
-  background-color: black;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 #admin_table {
@@ -547,7 +547,7 @@ h1 {
   font-size: 2rem;
   text-align: center;
   background-color: gray;
-  color: white;
+  color: #ffffff;
 }
 
 #admin_table tbody tr {
@@ -555,7 +555,7 @@ h1 {
 }
 
 #admin_table tbody tr td {
-  border: 1px solid black;
+  border: 1px solid #000000;
 }
 
 #admin_table tbody tr td textarea {
@@ -567,8 +567,8 @@ h1 {
 #admin_table tbody tr td input {
   border: none;
   padding: 20px;
-  color: black;
-  background-color: white;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 #admin_table tbody tr td input:hover {
@@ -576,8 +576,6 @@ h1 {
 }
 
 #admin form {
-  margin: 0 auto;
-  text-align: center;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -586,6 +584,9 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #admin form label {
@@ -597,25 +598,24 @@ h1 {
 #admin form textarea {
   width: 300px;
   height: 100px;
-  margin: 0 auto;
   resize: none;
 }
 
 #admin form input {
-  margin: 0 auto;
   border: none;
   padding: 20px;
-  color: black;
-  background-color: white;
-  border: solid 1px black;
+  color: #000000;
+  background-color: #ffffff;
+  border: solid 1px #000000;
+  margin: 20px 0px;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
 #admin form input:hover {
   cursor: pointer;
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 * {

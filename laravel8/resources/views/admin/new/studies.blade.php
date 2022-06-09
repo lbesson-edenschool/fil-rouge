@@ -5,8 +5,7 @@
 
 <div id="admin"> 
 
-    <h1>Panel admin | Studies | ajouter une carte
-    </h1>
+    <h1>Panel admin | Studies | ajouter une carte</h1>
                 
     <form action="/admin/new/studies" method="post">
 
@@ -20,8 +19,6 @@
         <textarea name="content" id="" cols="30" rows="10"></textarea>
 
         @csrf
-
-        <p></p>
         
         <input type="submit" data-id="" value="Enregistrer">
 
